@@ -1,5 +1,8 @@
 # Выживаем с инспекцией трафика
 
+
+Тебе не повезло и на твоей галере используют инспекцию https трафика? По сути DPI система при инспекции  https трафика проводит MITM атаку, а так как с этим видом атак пытаются бороться, то у тебя нормально не будет работать куча нужного софта. Ниже я расскажу, как пофиксить частые ошибки в некоторых популярных программных продуктах.
+
 ## WGET
 
 `wget` запускаем с ключиком **`--no-check-certificate`**, пример:
@@ -12,16 +15,23 @@
 
 В конфигурацию репозитория для **`yum/dnf`** добавляем **`sslverify=0`**, пример:
 
-```bash
-name=Fedora $releasever - $basearch #baseurl=http://download.fedoraproject.org/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/ 
-metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&arch=$basearch enabled=1 metadata_expire=7d 
-repo_gpgcheck=0 type=rpm gpgcheck=1 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch 
-skip_if_unavailable=False sslverify=0
+```
+name=Fedora $releasever - $basearch
+#baseurl=http://download.fedoraproject.org/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/ 
+metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&arch=$basearch
+enabled=1
+metadata_expire=7d 
+repo_gpgcheck=0
+type=rpm
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch 
+skip_if_unavailable=False
+sslverify=0
 ```
 
 ## Установка корневого доверенного сертификата в Linux (CentOS, Fedora)
 
-Копируем предоставленный сертификат в**` /etc/pki/ca-trust/source/anchors/`** и выполняем команду:
+Копируем предоставленный сертификат в **` /etc/pki/ca-trust/source/anchors/`** и выполняем команду:
 
 ```bash
 sudo update-ca-trust
@@ -33,7 +43,7 @@ sudo update-ca-trust
 
 Для VSCodium (бинарная сборка для линукса) нужно отредактировать файл /usr/share/applications/codium.desktop приведя его к такому виду:
 
-```bash
+```
 [Desktop Entry]
 Name=VSCodium
 Comment=Code Editing. Redefined.
