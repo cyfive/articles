@@ -1,21 +1,28 @@
 # Выживаем с инспекцией трафика
 
-
 Тебе не повезло и на твоей галере используют инспекцию https трафика? По сути DPI система при инспекции  https трафика проводит MITM атаку, а так как с этим видом атак пытаются бороться, то у тебя нормально не будет работать куча нужного софта. Ниже я расскажу, как пофиксить частые ошибки в некоторых популярных программных продуктах.
+
+## Установка корневого доверенного сертификата в Linux (CentOS, Fedora)
+
+Копируем предоставленный сертификат в **`/etc/pki/ca-trust/source/anchors/`** и выполняем команду:
+
+```bash
+sudo update-ca-trust
+```
 
 ## WGET
 
 `wget` запускаем с ключиком **`--no-check-certificate`**, пример:
 
-```
-[vagrant@localhost conf]$ wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.1.0.31237.zip --no-check-certificate
+```bash
+[semets@my-pc conf]$ wget https://example.com/awesome.zip --no-check-certificate
 ```
 
 ## YUM/DNF
 
 В конфигурацию репозитория для **`yum/dnf`** добавляем **`sslverify=0`**, пример:
 
-```
+```bash
 name=Fedora $releasever - $basearch
 #baseurl=http://download.fedoraproject.org/pub/fedora/linux/releases/$releasever/Everything/$basearch/os/ 
 metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&arch=$basearch
@@ -27,14 +34,6 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-$releasever-$basearch 
 skip_if_unavailable=False
 sslverify=0
-```
-
-## Установка корневого доверенного сертификата в Linux (CentOS, Fedora)
-
-Копируем предоставленный сертификат в **` /etc/pki/ca-trust/source/anchors/`** и выполняем команду:
-
-```bash
-sudo update-ca-trust
 ```
 
 ## Visual Studio Code (VSCode, VSCodium)
@@ -76,7 +75,7 @@ NET::ERR_CERT_WEAK_SIGNATURE_ALGORITHM
 
 то вам по аналогии с приложениями написанными с использованием Electron, нужно запускать Google Chrome с ключом **`--ignore-certificate-errors`**, иначе у вас ничего не будет нормально открываться.
 
-## PIP
+## PIP (Python)
 
 Для корректной работы pip нужно указывать `**--trusted-host**` для того, что-бы **pip** начал доверять нашему самоподписному сертификату, рабочий пример у меня выглядит так:
 
