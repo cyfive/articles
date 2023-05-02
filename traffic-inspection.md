@@ -80,5 +80,5 @@ NET::ERR_CERT_WEAK_SIGNATURE_ALGORITHM
 Для корректной работы pip нужно указывать `**--trusted-host**` для того, что-бы **pip** начал доверять нашему самоподписному сертификату, рабочий пример у меня выглядит так:
 
 ```bash
-(zabbix-cli-venv) [semets@my-pc my-project]$ pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org pyzabbix
+[semets@my-pc my-prj]$ pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org pyzabbix
 ```
