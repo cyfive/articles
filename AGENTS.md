@@ -12,8 +12,8 @@
 | Файл | Строк | Синхронизирована | Ошибки исправлены |
 |------|-------|------------------|-------------------|
 | `ano-open-code-who-is.md` | 105 | ✅ blog.emets.su/ano-open-source | ✅ 24 |
-| `fight-againist-legacy.md` | 37 | ✅ blog.emets.su/against_fighting_legacy | ✅ 18 |
-| `fight-againist-tech-debt.md` | 27 | ❌ | ✅ 13 |
+| `fight-against-legacy.md` | 37 | ✅ blog.emets.su/against_fighting_legacy | ✅ 18 |
+| `fight-against-tech-debt.md` | 27 | ❌ | ✅ 13 |
 | `info-gypsy.md` | 75 | ✅ blog.emets.su/it-info-gypsy | ✅ 32 |
 | `ssh-notes.md` | 40 | ✅ blog.emets.su/ssh-notes | ✅ 10 |
 | `traffic-inspection.md` | 71 | ✅ blog.emets.su/fix-https-inspect | ✅ 4 |
