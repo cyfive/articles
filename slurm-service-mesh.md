@@ -1,4 +1,15 @@
+---
+Title: Отзыв на интенсив Слёрм: Service mesh
+Date: 2021-03-25 00:00
+Modified: 2021-03-25 00:00
+Category: Блог
+Slug: review-slurm-service-mesh
+Authors: Емец Станислав
+Summary: ![](./img/slurm-service-mesh.png) Мне довелось принять участие в интенсиве Слёрм: Service Mesh. Как это было и что в итоге получилось решил изложить в небольшой заметке.
+---
 # Отзыв на Слёрм: Service Mesh
+
+![](./img/slurm-service-mesh.png)
 
 ## Общая информация
 

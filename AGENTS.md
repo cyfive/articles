@@ -5,19 +5,19 @@
 
 ## Структура
 
-11 статей (Markdown), 14 изображений в `img/` (скачаны с Teletype CDN). PNG через Git LFS.
+12 статей (Markdown), 17 изображений в `img/` (скачаны с Teletype CDN). PNG через Git LFS.
 
 ## Статьи
 
 | Файл | Строк | Синхронизирована | Ошибки исправлены |
 |------|-------|------------------|-------------------|
-| `ano-open-code-who-is.md` | 105 | ✅ blog.emets.su/ano-open-source | ✅ 24 |
-| `fight-against-legacy.md` | 37 | ✅ blog.emets.su/against_fighting_legacy | ✅ 18 |
+| `ano-open-code-who-is.md` | 115 | ✅ blog.emets.su/ano-open-source | ✅ 24 |
+| `fight-against-legacy.md` | 46 | ✅ blog.emets.su/against_fighting_legacy | ✅ 18 |
 | `fight-against-tech-debt.md` | 27 | ❌ | ✅ 13 |
 | `info-gypsy.md` | 75 | ✅ blog.emets.su/it-info-gypsy | ✅ 32 |
-| `ssh-notes.md` | 40 | ✅ blog.emets.su/ssh-notes | ✅ 10 |
-| `traffic-inspection.md` | 71 | ✅ blog.emets.su/fix-https-inspect | ✅ 4 |
-| `slurm-service-mesh.md` | 37 | ✅ blog.emets.su/review-slurm-service-mesh | ✅ 10 |
+| `ssh-notes.md` | 53 | ✅ blog.emets.su/ssh-notes | ✅ 10 |
+| `traffic-inspection.md` | 82 | ✅ blog.emets.su/fix-https-inspect | ✅ 4 |
+| `slurm-service-mesh.md` | 48 | ✅ blog.emets.su/review-slurm-service-mesh | ✅ 10 |
 | `automation-profit-and-needed.md` | 61 | ❌ | ✅ |
 | `git-lab-ssh-jump.md` | 54 | ❌ | ✅ |
 | `homeland-cpu-persp.md` | 104 | ❌ | ✅ |
